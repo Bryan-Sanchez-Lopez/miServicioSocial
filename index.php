@@ -25,7 +25,7 @@
             <img src="./views/resources/img4.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block text-end">
                 <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalLogin">
-                    Conoclo ahora
+                    Conocelo ahora
                 </button>
                 <p class="text-dark"><br>Con MiServicioSocial ahora todo es mas facil</p>
             </div>

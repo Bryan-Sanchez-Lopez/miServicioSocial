@@ -43,7 +43,7 @@
                         <td><?php echo $row["nombre"]; ?></td> 
                         <td>
                             <a href="/pruebas_software/controller/descargar.php?id=<?php echo $row["idDocumento"]?>" role="button" class="btn btn-success">Descargar</a>                    
-                            <button type="button" class="btn btn-danger">Eliminar</button>
+                            <a href="/pruebas_software/controller/eliminar.php?id=<?php echo $row["idDocumento"]?>" role="button" class="btn btn-danger">Eliminar</a>                    
                         </td>
                     </tr>
     
