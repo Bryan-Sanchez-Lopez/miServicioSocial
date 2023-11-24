@@ -16,22 +16,65 @@
     </nav>
 
     <div class="card text-center">
-        <div class="card-body">
-            <br><br>
+        <br><br>
+        <div class="card-header">
             <h5 class="card-title">Sube tus documentos aqui</h5>
             <p class="card-text">Con MiServicioSocial ahora todo es mas facil</p>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ssModal">
                 Subir documentos
             </button>
         </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre del archivo</th>
+                    <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php include("../../model/dbConection.php");
+                    $consulta = mysqli_query($conexion,"SELECT * FROM documento");
+                    foreach($consulta as $row):
+                    ?>
+                    <tr>
+                        <td><?php echo $row["idDocumento"]; ?></td>
+                        <td><?php echo $row["nombre"]; ?></td> 
+                        <td>
+                            <a href="/pruebas_software/controller/descargar.php?id=<?php echo $row["idDocumento"]?>" role="button" class="btn btn-success">Descargar</a>                    
+                            <button type="button" class="btn btn-danger">Eliminar</button>
+                        </td>
+                    </tr>
+    
+                    <?php endforeach; ?>
+
+                </tbody>
+            </table>
+        </div>
         <div class="card-footer text-body-secondary">
-            Universidad Politecnica De Penjamo
+            2 days ago
         </div>
     </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="ssModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
@@ -39,24 +82,21 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Selecciona el documento a subir</option>
-                        <option value="1">Registro al servicio social</option>
-                        <option value="2">Reporte de actividades</option>
-                        <option value="3">Carta de finalizacion</option>
+                <form action="/pruebas_software/controller/servicioSocial.php" method="post" enctype="multipart/form-data">
+                    <select class="form-select" aria-label="Default select example" name="nombre" id="nombre">
+                        <option selected name="nombre">Selecciona el documento a subir</option>
+                        <option value="Registro al servicio social">Registro al servicio social</option>
+                        <option value="Reporte de actividades">Reporte de actividades</option>
+                        <option value="Carta de finalizacion">Carta de finalizacion</option>
                     </select>
-                    <br>
                     <div class="mb-3">
-                        <label for="formFileMultiple" class="form-label">Multiple files input example</label>
-                        <input class="form-control" type="file/multipart" id="formFileMultiple" multiple>
+                        <label for="formFileMultiple" class="form-label">Documento a subir</label>
+                        <input class="form-control" type="file" id="ruta" name="archivo" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Subir</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Subir</button>                    </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
             </div>
         </div>

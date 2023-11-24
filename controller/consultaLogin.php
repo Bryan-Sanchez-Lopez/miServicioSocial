@@ -14,7 +14,6 @@ if( $resultado->num_rows > 0){
 
     $_SESSION['autenticado'] = true;
     header("Location: /pruebas_software/views/main/vistaAlumno.php");
-    
     // while($fila = $resultado->fetch_assoc() ){
     //     echo"id: ".$fila["idUsuario"]."Nombre".$fila["Nombre"];
     // }

@@ -7,7 +7,9 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
     header("Location: /pruebas_software/");
     exit();
 }
+
 ?>
+
 
 
 <!doctype html>
@@ -24,6 +26,9 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
             <a class="navbar-brand text-light">
                 MiServicioSocial
             </a>
+            <form method="post" action="/pruebas_software/controller/servicioSocial.php">
+                <input type="submit" name="cerrar_sesion" value="Cerrar Sesión" class="btn bg-dark text-light">
+            </form>
         </div>   
     </nav>
 
