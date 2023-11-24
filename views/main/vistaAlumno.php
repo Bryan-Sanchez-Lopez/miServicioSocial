@@ -1,3 +1,15 @@
+<?php 
+// Inicia la sesión
+session_start();
+
+// Verifica si el usuario está autenticado
+if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
+    header("Location: /pruebas_software/");
+    exit();
+}
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>

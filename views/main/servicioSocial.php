@@ -10,27 +10,10 @@
     <nav class="navbar bg-dark">
         <div class="container-fluid justify-content-center">
             <a class="navbar-brand text-light">
-                MiServicioSocial
+                Servicio social
             </a>
         </div>   
     </nav>
-
-
-    <ul class="nav nav-pills nav-fill">
-        <li class="nav-item">
-            <a class="btn btn-light p-4" href="#" role="button"> Servicio social</a>
-        </li>
-        <li class="nav-item">
-            <a class="btn btn-light p-4" href="#" role="button"> Estancia 1</a>
-        </li>
-        <li class="nav-item">
-            <a class="btn btn-light p-4" href="#" role="button"> Estancia 2</a>
-        </li>
-        <li class="nav-item">
-            <a class="btn btn-light p-4" href="#" role="button"> Estadia</a>
-        </li>
-    </ul>
-
 
     <div class="card text-center">
         <div class="card-body">

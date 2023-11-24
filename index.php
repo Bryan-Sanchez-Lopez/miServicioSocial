@@ -22,10 +22,12 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-            <img src="./views/resources/img3.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <a class="btn btn-outline-light" href="/pruebas_software/views/main/login.php" role="button"><strong>Conocelo ahora</strong></a>
-                <p><br>Con MiServicioSocial ahora todo es mas facil</p>
+            <img src="./views/resources/img4.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block text-end">
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalLogin">
+                    Conoclo ahora
+                </button>
+                <p class="text-dark"><br>Con MiServicioSocial ahora todo es mas facil</p>
             </div>
             </div>
             <div class="carousel-item">
@@ -42,6 +44,37 @@
             <span class="visually-hidden">Next</span>
         </button>
         </div>
+
+
+
+
+            <!-- Modal -->
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/pruebas_software/controller/consultaLogin.php" method="post">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo institucional</label>
+                            <input class="form-control" type="email" id="email" name="email" placeholder="21000000000@uppenjamo.edu.mx">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input class="form-control" type="password" id="password" name="password" placeholder="********">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Entrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
